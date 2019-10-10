@@ -1,0 +1,32 @@
+﻿<Window x:Class="WeatherServiceAssistant.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherServiceAssistant"
+        mc:Ignorable="d"
+        Title="WSA" Height="550" Width="800" ResizeMode="NoResize">
+    <Grid Background="MediumAquamarine">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"></RowDefinition>
+            <RowDefinition Height="30*"></RowDefinition>
+            <RowDefinition Height="30*"></RowDefinition>
+            <RowDefinition Height="120*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220*"></ColumnDefinition>
+            <ColumnDefinition Width="580*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Name="StartBotButton" FontSize="15" Margin="10" Content="Start assistant" Grid.Row="0" Click="StartBotButton_Click"></Button>
+        <Button Name="StopBotButton" FontSize="15" Margin="10" Content="Stop assistant" Grid.Row="1" Click="StopBotButton_Click"></Button>
+        <Button Name="UpdateButtofn" FontSize="15" Margin="10" Content="Update data" Grid.Row="2" Click="UpdateBotButton_Click"></Button>
+        <GroupBox Margin="5" FontSize="15" Header="Activity demonstration:" Grid.Column="0" Grid.Row="3" Height="120" Width="200" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical" Margin="5">
+                <RadioButton Name="WithoutRadioButton"  IsChecked="True" Margin="5" Content="without demonstration" GroupName="CurrentDialog" Checked="WithoutRadioButton_Checked"></RadioButton>
+                <RadioButton Name ="CurrentWindowRadioButton" IsChecked="False" Margin="5" Content="current window" GroupName="CurrentDialog" Checked="CurrentWindowRadioButton_Checked"></RadioButton>
+                <RadioButton Name ="ConsoleRadioButton" IsChecked="False" Margin="5" Content="console window" GroupName="CurrentDialog" Checked="ConsoleRadioButton_Checked"></RadioButton>
+            </StackPanel>
+        </GroupBox>
+        <TextBox Name="CurrentTextBox" FontSize="12" Margin="15" Grid.Column="1" Grid.RowSpan="4"></TextBox>
+    </Grid>
+</Window>
